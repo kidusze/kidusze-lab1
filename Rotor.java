@@ -14,7 +14,13 @@ public class Rotor {
     
     public boolean rotate(){
         //TODO
-        // rotorValues = rotorValues.substring(1) + rotorValues.charAt(0);
+        
+        // I used substring to extract a portion of the string which  for enigma would be starting from the first index 
+        // then I used charAt to extract just the very first element at index 0 and add it to the end
+        // Example : ABC 
+        // rotorValues.substring(1) would return "BC" and rotorValues.charAt(0) would only return "A" then add it together to get "BCA"
+
+        rotorValues = rotorValues.substring(1) + rotorValues.charAt(0);
 
         // Check if the rotors current character matches the starting character
         if(rotorValues.charAt(0) == startChar) {
