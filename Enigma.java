@@ -28,7 +28,7 @@ public class Enigma{
         for (int i = 0; i < message.length(); i++) {
             // Get the current character at index i
             char current_char = message.charAt(i);
-
+            
             int outer_index = rotors[2].indexOf(current_char);
             //Then we need to find the character aligned with it in the outermost rotor
             char middle_char = rotors[1].charAt(outer_index);
@@ -55,6 +55,7 @@ public class Enigma{
         // Then find that outer value in a corresponding middle 
         // For that middle value find the outermost for it. That is our encryption
 
+        
     }
 
     
