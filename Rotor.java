@@ -20,15 +20,15 @@ public class Rotor {
         // Example : ABC 
         // rotorValues.substring(1) would return "BC" and rotorValues.charAt(0) would only return "A" then add it together to get "BCA"
 
-        rotorValues = rotorValues.substring(1) + rotorValues.charAt(0);
+       // rotorValues = rotorValues.substring(0,25).concat(Character.toString(rotorValues.charAt(26)));
+       // can use concat or + 
+        rotorValues = rotorValues.substring(rotorValues.length()-1) + (rotorValues.substring(0,rotorValues.length()-1));
 
         // Check if the rotors current character matches the starting character
         if(rotorValues.charAt(0) == startChar) {
             return true;
         }
-        else {
-            return false;
-        }
+        return false;
                
     }
     

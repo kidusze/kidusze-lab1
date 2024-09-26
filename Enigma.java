@@ -18,12 +18,33 @@ public class Enigma{
         
     }
 
-
     public String decrypt(String message){        
         //TODO
         // Start from the outter and get the middle for it
         // Then find that middle value in a corresponding outter
         // For that outer value find the innermost for it. That is our encryption
+        String decrypted_message = "";
+         // Use a for loop to go through each character
+        for (int i = 0; i < message.length(); i++) {
+            // Get the current character at index i
+            char current_char = message.charAt(i);
+
+            int outer_index = rotors[2].indexOf(current_char);
+            //Then we need to find the character aligned with it in the outermost rotor
+            char middle_char = rotors[1].charAt(outer_index);
+            // now using that char we search for it in the middle rotor and get its index 
+             outer_index = rotors[2].indexOf(middle_char);
+            // then we use the index from that to find the corresponding outermost roter with the same index 
+            char decrypted = rotors[0].charAt(outer_index);
+            // Then we append/add the encrypted character to the result
+            decrypted_message  = decrypted_message.concat(Character.toString(decrypted));
+            
+            this.rotate();
+        }
+
+       return decrypted_message;
+
+
     }
 
 
@@ -33,6 +54,7 @@ public class Enigma{
         // Start from the inner and get the outer for it
         // Then find that outer value in a corresponding middle 
         // For that middle value find the outermost for it. That is our encryption
+
     }
 
     
