@@ -20,9 +20,6 @@ public class Enigma{
 
     public String decrypt(String message){        
         //TODO
-        // Start from the outter and get the middle for it
-        // Then find that middle value in a corresponding outter
-        // For that outer value find the innermost for it. That is our encryption
         // We initialize an empty string to store the decrypted message
         String decrypted_message = "";
          // Use a for loop to go through each character in the imput message
