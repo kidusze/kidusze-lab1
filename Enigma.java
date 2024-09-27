@@ -55,7 +55,19 @@ public class Enigma{
         // Then find that outer value in a corresponding middle 
         // For that middle value find the outermost for it. That is our encryption
 
-        
+        String encrypted_message = "";
+        for (int i = 0; i < message.length(); i++) {
+            char current_char = message.charAt(i);
+            int inner_index = rotors[0].indexOf(current_char);
+            char middle_char = rotors[2].charAt(inner_index);
+            int middle_index = rotors[1].indexOf(middle_char);
+            char encrypted = rotors[2].charAt(middle_index);
+            encrypted_message  = encrypted_message.concat(Character.toString(encrypted));
+            
+            this.rotate();
+        }
+
+       return encrypted_message;
     }
 
     
